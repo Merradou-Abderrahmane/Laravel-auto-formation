@@ -9,11 +9,5 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-
-    function  index()
-    {
-
-        $data = 'hello world';
-        return view('welcome', compact('data'));
-    }
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }
