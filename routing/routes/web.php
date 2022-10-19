@@ -31,3 +31,6 @@ Route::get('/user', [UserController::class, 'index']);
 Route::get('/user/{id}', [UserController::class, 'show']);
 
 // CSRF Protection
+Route::get('/csrf', function () {
+    return view('csrf');
+});

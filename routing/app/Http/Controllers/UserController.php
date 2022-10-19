@@ -11,10 +11,8 @@ class UserController extends Controller
         return view('index');
     }
 
-    // public function show($id){
-    //     return 'User '.$id;
-    // }
     public function show($id){ 
         return $id;
     } 
+
 }
