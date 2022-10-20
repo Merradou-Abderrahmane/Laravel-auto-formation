@@ -16,10 +16,9 @@ class studentController extends Controller
         // $student->save();
     }
 
-    public function getStudents(){
-        // return student::all();
-        $data = student::all();
-        return view('index', ['students' => $data]);
-    }
-
 }
+
+
+
+
+
