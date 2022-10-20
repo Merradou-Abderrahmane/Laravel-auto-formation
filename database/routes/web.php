@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\studentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 // Route::view("test", 'test');
+
+
+Route::view('add','addStudent');
+
+Route::post('add', [studentController::class, "addStudent"]);
+
+Route::get('index', [studentController::class, "getStudents"]);
