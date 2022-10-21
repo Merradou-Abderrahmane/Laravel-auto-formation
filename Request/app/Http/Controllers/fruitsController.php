@@ -38,4 +38,14 @@ class fruitsController extends Controller
         return view('fruit',compact('fruit'));
     }
     
+    // join table
+
+    public function join(){
+        $students = DB::table('students')
+            ->join('promotions', 'promotions.id', '=', 'students.promotionID')
+            ->select('*')
+            ->get();
+            return view('join',compact('students'));
+    }
+
 }
