@@ -28,5 +28,14 @@ class fruitsController extends Controller
         
         return view('fruit',compact('fruit'));
     }
+
+    public function select()
+    {
+        $fruit = DB::table('fruits')
+        ->select('name','id')
+        ->get();
+ 
+        return view('fruit',compact('fruit'));
+    }
     
 }
