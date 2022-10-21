@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('index', [fruitsController::class, 'showFruits']);
+
+Route::get("fruit/{id}",[fruitsController::class,"getFruit"]);

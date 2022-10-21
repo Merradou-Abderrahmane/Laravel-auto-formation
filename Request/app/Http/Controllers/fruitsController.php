@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\fruit;
 
 class fruitsController extends Controller
 {
+    // public function showFruits(){
+    //     $fruits = DB::table('fruits')->get();
+    //     return view('index', ['fruits' => $fruits]);
+    // // 
     public function showFruits()
     {
         // return fruit::all();
@@ -14,7 +19,14 @@ class fruitsController extends Controller
 
         $data = fruit::all();
         return view('index', ['fruits' => $data]);
-
-
     }
+    
+    // get fruit by id
+    public function getFruit($id)
+    {
+        $fruit = DB::table('fruits')->where("id",$id)->get();
+        
+        return view('fruit',compact('fruit'));
+    }
+    
 }
