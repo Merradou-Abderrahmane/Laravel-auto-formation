@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// has many from post controller
+Route::get('/hasMany', [PostController::class, 'hasMany']);
+// belongs to from comment controller
+Route::get('/belongsTo', [CommentController::class, 'belongsTo']);
