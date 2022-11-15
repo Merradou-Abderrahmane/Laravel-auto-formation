@@ -71,5 +71,6 @@ class PromotionController extends Controller
     {
         //
         Promotion::find($id)->delete();
+        // Promotion::destroy($id);
     }
 }
